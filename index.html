@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2eb">
+  <meta name="description" content="釜山 6 天 5 夜自由行示範行程：海景、巷弄、美食與交通安排。">
+  <title>釜山慢慢走｜6 天 5 夜自由行</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172d35;
+      --muted: #718087;
+      --paper: #f5f2eb;
+      --white: #fffefa;
+      --teal: #167c79;
+      --coral: #eb795f;
+      --line: #e7e2d9;
+      --shadow: 0 18px 50px rgba(34, 55, 55, .09);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .page-shell {
+      width: min(1120px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 22px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .06em;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--teal);
+      color: white;
+      font-size: 16px;
+    }
+
+    .top-note {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      min-height: 445px;
+      align-items: center;
+      overflow: hidden;
+      padding: 56px 7%;
+      border-radius: 24px;
+      background:
+        radial-gradient(ellipse at 75% 100%, rgba(251, 184, 127, .95) 0 13%, transparent 13.5%),
+        linear-gradient(160deg, transparent 47%, rgba(15, 98, 111, .88) 47.2% 60%, transparent 60.2%),
+        linear-gradient(174deg, transparent 50%, rgba(24, 127, 135, .92) 50.2% 66%, transparent 66.2%),
+        linear-gradient(180deg, #f8cda7 0%, #f9ad91 42%, #4f9b9d 42.2%, #246b76 100%);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero::before {
+      right: -3%;
+      bottom: 8%;
+      width: 54%;
+      height: 40%;
+      border-radius: 50% 50% 0 0;
+      background: linear-gradient(135deg, #274a52, #183d49);
+      clip-path: polygon(0 100%, 12% 39%, 20% 62%, 34% 10%, 46% 65%, 60% 24%, 71% 67%, 88% 30%, 100% 100%);
+      opacity: .9;
+    }
+
+    .hero::after {
+      right: 12%;
+      bottom: 27%;
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      background: #ffe2ae;
+      box-shadow: 0 0 70px 20px rgba(255, 211, 155, .3);
+    }
+
+    .hero-copy { max-width: 470px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: #155e62;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 22px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.12;
+      letter-spacing: -.055em;
+    }
+
+    h1 span {
+      display: block;
+      margin-top: 12px;
+      color: #245d63;
+      font-size: clamp(19px, 3vw, 27px);
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+    .hero-description {
+      max-width: 360px;
+      margin: 20px 0 26px;
+      color: #294d53;
+      font-size: 14px;
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 18px;
+      border-radius: 99px;
+      background: var(--ink);
+      color: white;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s, background .2s;
+    }
+
+    .hero-link:hover { transform: translateY(-2px); background: var(--teal); }
+
+    .hero-stamp {
+      position: absolute;
+      right: 5%;
+      bottom: 8%;
+      display: grid;
+      width: 104px;
+      height: 104px;
+      align-content: center;
+      border: 1px solid rgba(255, 255, 255, .7);
+      border-radius: 50%;
+      color: white;
+      text-align: center;
+      transform: rotate(9deg);
+    }
+
+    .hero-stamp strong { font-family: Georgia, serif; font-size: 30px; line-height: 1; }
+    .hero-stamp span { margin-top: 5px; font-size: 10px; letter-spacing: .13em; }
+
+    .trip-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      margin: 22px 0 72px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .fact {
+      padding: 0 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .fact:first-child { padding-left: 4px; }
+    .fact:last-child { border: 0; }
+    .fact-label { color: var(--muted); font-size: 11px; letter-spacing: .08em; }
+    .fact-value { margin-top: 3px; font-size: 15px; font-weight: 800; }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-kicker {
+      margin: 0 0 8px;
+      color: var(--teal);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .18em;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(27px, 4vw, 38px);
+      letter-spacing: -.04em;
+      line-height: 1.2;
+    }
+
+    .section-intro {
+      max-width: 350px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .day-tabs {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .day-tab {
+      min-height: 74px;
+      padding: 11px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .day-tab strong { display: block; color: var(--ink); font-size: 14px; }
+    .day-tab span { font-size: 10px; }
+    .day-tab:hover { border-color: var(--teal); }
+    .day-tab[aria-selected="true"] { border-color: var(--teal); background: var(--teal); color: #e7f5ef; }
+    .day-tab[aria-selected="true"] strong { color: white; }
+
+    .itinerary-card {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      min-height: 410px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .day-art {
+      position: relative;
+      display: flex;
+      min-height: 350px;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      padding: 28px;
+      background: linear-gradient(155deg, #8cc8c2, #f2c9a4 58%, #e99475);
+      color: white;
+      isolation: isolate;
+    }
+
+    .day-art::before,
+    .day-art::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+    }
+
+    .day-art::before {
+      right: -8%;
+      bottom: -7%;
+      width: 116%;
+      height: 47%;
+      border-radius: 50% 50% 0 0;
+      background: rgba(25, 100, 111, .8);
+      transform: rotate(-5deg);
+    }
+
+    .day-art::after {
+      right: -15%;
+      bottom: -20%;
+      width: 120%;
+      height: 42%;
+      border-radius: 50% 50% 0 0;
+      background: rgba(22, 65, 76, .9);
+      transform: rotate(5deg);
+    }
+
+    .art-label {
+      align-self: flex-start;
+      padding: 6px 10px;
+      border: 1px solid rgba(255, 255, 255, .6);
+      border-radius: 99px;
+      background: rgba(23, 45, 53, .14);
+      font-size: 10px;
+      letter-spacing: .1em;
+    }
+
+    .art-title { max-width: 260px; font-size: 29px; font-weight: 800; line-height: 1.25; }
+    .art-title small { display: block; margin-top: 8px; font-size: 12px; font-weight: 500; letter-spacing: .08em; }
+
+    .day-content { padding: 30px clamp(22px, 4vw, 42px); }
+    .day-heading { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .day-number { color: var(--coral); font-size: 11px; font-weight: 800; letter-spacing: .14em; }
+    .day-content h3 { margin: 5px 0 0; font-size: 24px; letter-spacing: -.03em; }
+    .day-theme { margin: 5px 0 22px; color: var(--muted); font-size: 12px; }
+
+    .schedule { position: relative; margin: 0; padding: 0; list-style: none; }
+    .schedule::before {
+      position: absolute;
+      top: 8px;
+      bottom: 12px;
+      left: 47px;
+      width: 1px;
+      background: var(--line);
+      content: "";
+    }
+
+    .schedule li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      padding-bottom: 17px;
+    }
+
+    .schedule li::before {
+      position: absolute;
+      top: 6px;
+      left: 44px;
+      width: 7px;
+      height: 7px;
+      border: 2px solid var(--white);
+      border-radius: 50%;
+      background: var(--teal);
+      box-shadow: 0 0 0 1px var(--teal);
+      content: "";
+    }
+
+    .schedule time { color: var(--muted); font-size: 11px; font-weight: 700; }
+    .schedule strong { display: block; font-size: 13px; }
+    .schedule p { margin: 3px 0 0; color: var(--muted); font-size: 11px; }
+
+    .tip {
+      margin-top: 2px;
+      padding: 11px 13px;
+      border-radius: 9px;
+      background: #f2f6f2;
+      color: #47625f;
+      font-size: 11px;
+    }
+
+    .tip strong { color: var(--teal); }
+
+    .planning {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      margin: 76px 0;
+    }
+
+    .plan-card {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--white);
+    }
+
+    .plan-card h3 { margin: 0 0 17px; font-size: 17px; }
+    .hotel-row { display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-top: 1px solid var(--line); }
+    .hotel-row strong { display: block; font-size: 13px; }
+    .hotel-row span { color: var(--muted); font-size: 11px; }
+    .hotel-tag { align-self: center; padding: 5px 9px; border-radius: 99px; background: #eaf3ef; color: var(--teal) !important; white-space: nowrap; }
+
+    .budget {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .budget-label { font-size: 12px; }
+    .budget-label span { display: block; color: var(--muted); font-size: 10px; }
+    .budget-amount { font-size: 13px; font-weight: 800; }
+    .budget-total { display: flex; justify-content: space-between; align-items: baseline; margin-top: 10px; padding-top: 14px; border-top: 1px dashed #d9d3c9; }
+    .budget-total strong { color: var(--teal); font-size: 20px; }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 22px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer a { color: var(--teal); text-decoration: none; }
+
+    @media (max-width: 760px) {
+      .page-shell { width: min(100% - 32px, 560px); }
+      .hero { min-height: 500px; align-items: start; padding: 45px 26px; }
+      .hero::before { right: -15%; bottom: 2%; width: 100%; }
+      .hero::after { right: 20%; bottom: 25%; width: 72px; height: 72px; }
+      .hero-stamp { right: 5%; bottom: 6%; width: 80px; height: 80px; }
+      .hero-stamp strong { font-size: 23px; }
+      .trip-facts { grid-template-columns: repeat(2, 1fr); gap: 15px 0; margin-bottom: 56px; }
+      .fact { padding: 0 14px; }
+      .fact:nth-child(2) { border-right: 0; }
+      .fact:nth-child(3) { padding-left: 4px; }
+      .section-heading { align-items: start; flex-direction: column; gap: 10px; }
+      .day-tabs { grid-template-columns: repeat(3, 1fr); }
+      .day-tab { min-height: 62px; }
+      .itinerary-card { grid-template-columns: 1fr; }
+      .day-art { min-height: 210px; padding: 20px; }
+      .art-title { font-size: 24px; }
+      .planning { grid-template-columns: 1fr; margin: 55px 0; }
+      .footer { flex-direction: column; gap: 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="page-shell topbar">
+    <a class="brand" href="#" aria-label="釜山慢慢走首頁">
+      <span class="brand-mark" aria-hidden="true">B</span>
+      <span>慢慢走，去釜山</span>
+    </a>
+    <span class="top-note">BUSAN TRAVEL NOTES · 2026</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">A LITTLE SEA, A LOT OF JOY</p>
+        <h1 id="hero-title">釜山，<br>慢慢走。<span>6 天 5 夜・海岸散步提案</span></h1>
+        <p class="hero-description">從海雲台的晨光，到南浦洞巷弄裡的熱鬧。留一點空白，讓海風帶你遇見釜山。</p>
+        <a class="hero-link" href="#itinerary">打開行程 <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-stamp" aria-label="六天五夜"><strong>6D</strong><span>5 NIGHTS</span></div>
+    </section>
+
+    <section class="trip-facts" aria-label="行程摘要">
+      <div class="fact"><div class="fact-label">旅行長度</div><div class="fact-value">6 天 5 夜</div></div>
+      <div class="fact"><div class="fact-label">住宿建議</div><div class="fact-value">西面 3 晚＋南浦 2 晚</div></div>
+      <div class="fact"><div class="fact-label">移動方式</div><div class="fact-value">地鐵・公車・步行</div></div>
+      <div class="fact"><div class="fact-label">旅行節奏</div><div class="fact-value">海景 × 美食 × 散步</div></div>
+    </section>
+
+    <section id="itinerary" aria-labelledby="itinerary-title">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">THE SIX-DAY JOURNEY</p>
+          <h2 id="itinerary-title">每天，走一小段釜山</h2>
+        </div>
+        <p class="section-intro">點選日期切換行程。景點順序以同區移動為主，留了休息時間，也方便依天氣調整。</p>
+      </div>
+
+      <div class="day-tabs" role="tablist" aria-label="選擇旅行日">
+        <button class="day-tab" id="tab-1" role="tab" aria-selected="true" aria-controls="day-panel" tabindex="0" data-day="1"><strong>DAY 01</strong><span>抵達・西面</span></button>
+        <button class="day-tab" id="tab-2" role="tab" aria-selected="false" aria-controls="day-panel" tabindex="-1" data-day="2"><strong>DAY 02</strong><span>海雲台・海岸</span></button>
+        <button class="day-tab" id="tab-3" role="tab" aria-selected="false" aria-controls="day-panel" tabindex="-1" data-day="3"><strong>DAY 03</strong><span>甘川・南浦</span></button>
+        <button class="day-tab" id="tab-4" role="tab" aria-selected="false" aria-controls="day-panel" tabindex="-1" data-day="4"><strong>DAY 04</strong><span>影島・海景</span></button>
+        <button class="day-tab" id="tab-5" role="tab" aria-selected="false" aria-controls="day-panel" tabindex="-1" data-day="5"><strong>DAY 05</strong><span>機張・廣安里</span></button>
+        <button class="day-tab" id="tab-6" role="tab" aria-selected="false" aria-controls="day-panel" tabindex="-1" data-day="6"><strong>DAY 06</strong><span>早午餐・返程</span></button>
+      </div>
+
+      <article class="itinerary-card" id="day-panel" role="tabpanel" aria-labelledby="tab-1" tabindex="0">
+        <div class="day-art" aria-hidden="true">
+          <span class="art-label">DAY 01 · ARRIVAL</span>
+          <div class="art-title">先把步調<br>放慢一點<small>ARRIVE & SETTLE IN</small></div>
+        </div>
+        <div class="day-content">
+          <div class="day-heading">
+            <div><span class="day-number">DAY 01 / 06</span><h3>抵達釜山・西面初見</h3></div>
+          </div>
+          <p class="day-theme">今天不趕路，先入住、吃頓好的，讓旅程舒服開始。</p>
+          <ol class="schedule">
+            <li><time>下午</time><div><strong>抵達金海機場・前往西面</strong><p>搭輕軌轉地鐵或機場巴士，入住後稍作休息。</p></div></li>
+            <li><time>傍晚</time><div><strong>田浦咖啡街散步</strong><p>逛選物小店、找間咖啡館坐坐，感受巷弄日常。</p></div></li>
+            <li><time>晚上</time><div><strong>西面地下街・豬肉湯飯</strong><p>到西面吃一碗熱騰騰的湯飯，附近也有許多宵夜選擇。</p></div></li>
+          </ol>
+          <div class="tip"><strong>小提醒</strong>　抵達日不排需要預約的行程；晚班機可直接入住休息。</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="planning" aria-label="住宿與預算建議">
+      <div class="plan-card">
+        <p class="section-kicker">STAY SOMEWHERE CENTRAL</p>
+        <h3>住宿安排｜少搬一次行李</h3>
+        <div class="hotel-row"><div><strong>西面・3 晚</strong><span>交通方便，適合抵達日與市區探索</span></div><span class="hotel-tag">DAY 1–3</span></div>
+        <div class="hotel-row"><div><strong>南浦洞・2 晚</strong><span>靠近札嘎其、BIFF 廣場，往影島也方便</span></div><span class="hotel-tag">DAY 4–5</span></div>
+        <div class="tip"><strong>住宿選擇</strong>　挑選靠近地鐵站、可寄放行李且有電梯的旅宿，出發前確認入住時間。</div>
+      </div>
+      <div class="plan-card">
+        <p class="section-kicker">A SIMPLE BUDGET</p>
+        <h3>每人預算抓多少？</h3>
+        <div class="budget"><div class="budget-label">住宿・5 晚<span>雙人房分攤估算</span></div><div class="budget-amount">NT$ 5,000–9,000</div></div>
+        <div class="budget"><div class="budget-label">餐食・交通・門票<span>依餐廳與搭乘方式調整</span></div><div class="budget-amount">NT$ 7,000–12,000</div></div>
+        <div class="budget"><div class="budget-label">機票・購物<span>依出發日期及個人習慣</span></div><div class="budget-amount">另計</div></div>
+        <div class="budget-total"><span>不含機票與購物</span><strong>約 NT$ 12,000 起</strong></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>行程為示範規劃，營業時間、班次與票價請出發前再次確認。</span>
+      <a href="https://www.visitbusan.net/" target="_blank" rel="noreferrer">釜山觀光官方網站 ↗</a>
+    </footer>
+  </main>
+
+  <script>
+    const days = [
+      {
+        title: "抵達釜山・西面初見", theme: "今天不趕路，先入住、吃頓好的，讓旅程舒服開始。",
+        label: "DAY 01 · ARRIVAL", art: "先把步調<br>放慢一點", en: "ARRIVE & SETTLE IN", tip: "抵達日不排需要預約的行程；晚班機可直接入住休息。",
+        items: [["下午", "抵達金海機場・前往西面", "搭輕軌轉地鐵或機場巴士，入住後稍作休息。"], ["傍晚", "田浦咖啡街散步", "逛選物小店、找間咖啡館坐坐，感受巷弄日常。"], ["晚上", "西面地下街・豬肉湯飯", "到西面吃一碗熱騰騰的湯飯，附近也有許多宵夜選擇。"]]
+      },
+      {
+        title: "海雲台・沿著海岸線", theme: "搭海岸列車、看海散步，今天把時間留給東釜山。",
+        label: "DAY 02 · COASTAL DAY", art: "沿著海岸<br>去看藍色", en: "FOLLOW THE BLUE", tip: "海岸列車建議先查班次並預約；遇到大風雨可改成海雲台室內行程。",
+        items: [["上午", "海雲台海水浴場", "早點到海邊散步，再到市場附近吃早餐。"], ["中午", "海岸列車・青沙浦", "由尾浦搭列車到青沙浦，沿途看海、拍照，午餐吃烤貝或海鮮。"], ["下午", "海雲台市場・海理團路", "回到海雲台逛市場和特色小店，找間咖啡館休息。"], ["晚上", "冬柏島・The Bay 101", "天氣許可時沿冬柏島散步，欣賞海雲台夜景後返回西面。"]]
+      },
+      {
+        title: "甘川洞・南浦散策", theme: "從山城彩色階梯一路逛到市場，感受老城區的活力。",
+        label: "DAY 03 · OLD BUSAN", art: "轉進巷弄<br>遇見日常", en: "COLORFUL CORNERS", tip: "甘川洞多坡道與階梯，穿好走的鞋；尊重居民生活，拍照前留意標示。",
+        items: [["上午", "甘川文化村", "搭公車上山，沿著地圖散步看彩色屋與壁畫。"], ["中午", "札嘎其市場", "到市場周邊享用海鮮午餐，依店家當日供應選擇。"], ["下午", "BIFF 廣場・國際市場", "吃糖餅、逛南浦洞街區與國際市場，慢慢走回市區。"], ["晚上", "龍頭山公園", "登上釜山塔周邊看城市夜色，晚餐留在南浦洞。"]]
+      },
+      {
+        title: "影島・海邊慢行", theme: "走訪海岸步道與白淺灘文化村，讓今天的風景有一點留白。",
+        label: "DAY 04 · YEONGDO", art: "海風吹過<br>影島午後", en: "A WALK BY THE SEA", tip: "白淺灘文化村是住宅區，請降低音量並遵循現場動線；海岸步道依天候量力而行。",
+        items: [["上午", "退房・行李寄放", "從西面移動到南浦住宿，先寄放行李再出發。"], ["中午", "太宗台", "搭園區列車或步行遊園；留意開放資訊與天候狀況。"], ["下午", "白淺灘文化村", "沿海岸步道看海、逛小店，找間海景咖啡館歇腳。"], ["晚上", "南浦洞晚餐", "回南浦入住，享用烤肉或在地小吃。"]]
+      },
+      {
+        title: "機張・廣安里夜色", theme: "寺院與海岸各留一段時間，晚上用廣安大橋收尾。",
+        label: "DAY 05 · EAST COAST", art: "從寺院到<br>海邊夜色", en: "TEMPLE TO CITY LIGHTS", tip: "機張景點較分散，建議先看公車班距；想減少轉乘可安排計程車接駁。",
+        items: [["上午", "海東龍宮寺", "一早出發避開人潮，沿海岸步道參觀寺院。"], ["中午", "機張市場・海鮮午餐", "品嚐當季海鮮，出發前確認店家營業狀況。"], ["下午", "移動至廣安里", "回市區後沿廣安里海水浴場散步，找咖啡館看海。"], ["晚上", "廣安大橋夜景", "在海邊用晚餐，欣賞亮燈後的海景，再返回南浦。"]]
+      },
+      {
+        title: "慢早餐・帶著回憶返程", theme: "最後一天不塞景點，留時間吃早餐、整理行李與前往機場。",
+        label: "DAY 06 · SEE YOU AGAIN", art: "把海風<br>帶回家", en: "UNTIL NEXT TIME", tip: "預留前往機場與辦理登機時間；購物退稅、行李規定依航空公司公告為準。",
+        items: [["早上", "南浦洞早午餐", "睡飽再出門，在住宿附近吃早餐、補買伴手禮。"], ["中午", "取行李・前往機場", "依航班時間搭地鐵或預約接駁，預留交通緩衝。"], ["返程", "金海機場・回家", "確認航廈與報到時間，結束釜山 6 天 5 夜小旅行。"]]
+      }
+    ];
+
+    const tabs = Array.from(document.querySelectorAll(".day-tab"));
+    const panel = document.querySelector("#day-panel");
+    const renderDay = (index) => {
+      const day = days[index];
+      const dayNumber = String(index + 1).padStart(2, "0");
+      panel.setAttribute("aria-labelledby", `tab-${index + 1}`);
+      panel.innerHTML = `
+        <div class="day-art" aria-hidden="true">
+          <span class="art-label">${day.label}</span>
+          <div class="art-title">${day.art}<small>${day.en}</small></div>
+        </div>
+        <div class="day-content">
+          <div class="day-heading">
+            <div><span class="day-number">DAY ${dayNumber} / 06</span><h3>${day.title}</h3></div>
+          </div>
+          <p class="day-theme">${day.theme}</p>
+          <ol class="schedule">${day.items.map(([time, title, description]) => `
+            <li><time>${time}</time><div><strong>${title}</strong><p>${description}</p></div></li>
+          `).join("")}</ol>
+          <div class="tip"><strong>小提醒</strong>　${day.tip}</div>
+        </div>`;
+    };
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        tabs.forEach((item, itemIndex) => {
+          const selected = itemIndex === index;
+          item.setAttribute("aria-selected", String(selected));
+          item.tabIndex = selected ? 0 : -1;
+        });
+        renderDay(index);
+      });
+      tab.addEventListener("keydown", (event) => {
+        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+        event.preventDefault();
+        const offset = event.key === "ArrowRight" ? 1 : -1;
+        const next = (index + offset + tabs.length) % tabs.length;
+        tabs[next].focus();
+        tabs[next].click();
+      });
+    });
+  </script>
+</body>
+</html>
